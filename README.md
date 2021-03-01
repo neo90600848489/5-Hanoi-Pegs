@@ -17,6 +17,7 @@ n is a number between 1 and 10, inclusive. Disks can only move to adjacent pegs,
 The time complexity for this algorithm is O(3n). I implemented a method called hanoiStart, which is called from the constructor of the Towers class. This method moves disk 1 from Start to Aux1, and then calls on method H1, which moves all disks except disk 1 from Start to Dest. Method H1 has 3 recursive calls, which is where the time complexity of O(3n) is derived from. After H1 has been executed, hanoiStart moves disk 1 from Aux3 to Dest, thus solving the unique Hanoi problem. The complete algorithm for this program was 2n+3n-1. The 2n comes from moving the disks from Start to Aux1, and also from moving them from Aux3 to Dest, whereas the 3n-1 comes from the recursive method to move all the disks from Aux1 to Aux3. 
 
 **Space Complexity:** 
+**Bipul**
 Two arrays were used in this program to store whether a disk had moved from Start to Aux1 and from Aux3 to Dest respectively. The arrays were of size 12 to allow for checks without error, and 0s were assigned to indexes that matched the disks that hadn’t been moved yet. Once the disks had been moved, the 0s were changed to 1s. No stacks or any other data structures were used, and move statements were printed as soon as they were run. Due to the 2 arrays being the only factors, and the size of the arrays not changing the space complexity of this algorithm is O(n), due to only the stack storing the recursive calls changing. The recursive stack grows and shrinks linearly with n.
 
 
